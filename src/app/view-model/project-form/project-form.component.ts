@@ -23,12 +23,28 @@ export class ProjectFormComponent implements OnInit {
         title: ['', [Validators.required]],
         minAge: ['', [Validators.required]],
         maxAge: ['', [Validators.required]],
-        description: ['', [Validators.required]]
+        description: ['', [Validators.required]],
+      }),
+      projectGallery: this.fb.group({
+        projectName: ['', [Validators.required]],
+        projectImages: this.fb.array([], Validators.required)
+      }),
+      projectCosts: this.fb.group({
+        projectName: ['', [Validators.required]],
+        projectCostsOptions: this.fb.array([])
       })
     })
   }
 
   get projectDetails() {
+    return this.projectForm.get("projectDetails")!;
+  }
+
+  get projectGallery() {
+    return this.projectForm.get("projectGallery")!;
+  }
+
+  get projectCosts() {
     return this.projectForm.get("projectDetails")!;
   }
 
