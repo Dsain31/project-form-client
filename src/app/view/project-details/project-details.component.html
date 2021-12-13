@@ -1,0 +1,51 @@
+<form [formGroup]="projectForm">
+  <h2><b>Project Details</b></h2>
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label>Organizations</mat-label>
+    <mat-select formControlName="organization">
+      <mat-option>
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label >Categories</mat-label>
+    <mat-select formControlName="category">
+      <mat-option>
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label>Activities</mat-label>
+    <mat-select formControlName="activity">
+      <mat-option>
+
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label >Minimum Age</mat-label>
+    <input matInput formControlName="minAge">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label >Maximum Age</mat-label>
+    <input matInput formControlName="maxAge">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" formGroupName="projectDetails">
+    <mat-label >Overview Description</mat-label>
+    <input matInput formControlName="description">
+  </mat-form-field>
+
+  <div>
+    <button style="float: right;" mat-raised-button color='warn' matStepperNext>Next</button>
+  </div>
+</form>

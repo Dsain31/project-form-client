@@ -1,0 +1,11 @@
+<mat-card>
+  <form [formGroup]="projectForm">
+
+    <mat-stepper linear #stepper>
+      <mat-step [stepControl]="projectDetails" formGroupName="projectDetails" label="Project Details">
+        <app-project-details [projectForm]="projectForm"></app-project-details>
+      </mat-step>
+    </mat-stepper>
+
+  </form>
+</mat-card>
