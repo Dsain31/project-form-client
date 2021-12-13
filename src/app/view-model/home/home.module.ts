@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -9,6 +10,7 @@ import { HomeComponent } from './home.component';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
+    MatCardModule,
     RouterModule.forChild([
       {
         path: '', component: HomeComponent

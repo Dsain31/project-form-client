@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CommonService } from 'src/app/global/common/common.service';
+import { ProjectFormService } from 'src/app/model/project-form/project-form.service';
 
 @Component({
   selector: 'app-project-costs',
@@ -11,7 +13,9 @@ export class ProjectCostsComponent implements OnInit {
   @Input() projectForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private projectFormService: ProjectFormService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -44,9 +48,15 @@ export class ProjectCostsComponent implements OnInit {
   }
   onFinish() {
     if (this.projectCosts.invalid && this.projectForm.invalid) {
-      this.commonSer
+      this.commonService.openSnackBar("Fill all fields");
       return;
     }
+    this.projectFormService.createProjectForm(this.projectForm.value).subscribe((res) => {
+      this.commonService.openSnackBar(res.message);
+      this.router.navigate(['home']);
+    }, (err) => {
+      this.commonService.openSnackBar(err);
+    })
   }
 
 }

@@ -9,11 +9,11 @@
       <div *ngFor="let option of projectCostsOptionsArray.controls; let i  = index" [formGroupName]="i">
         <mat-form-field appearance="outline" >
           <mat-label>Project Duration</mat-label>
-          <input matInput formControlName="duration" placeholder="Project Name">
+          <input type="number" matInput formControlName="duration" placeholder="Project Duration">
         </mat-form-field>
         <mat-form-field appearance="outline" >
           <mat-label>Project Costs</mat-label>
-          <input matInput formControlName="costs" placeholder="Project Name">
+          <input type="number" matInput formControlName="costs" placeholder="Project Costs">
         </mat-form-field>
         <button *ngIf="i > 0" mat-raised-button color="warn" (click)="removeOptions(i)">Delete</button>
       </div>

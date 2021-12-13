@@ -1,1 +1,74 @@
-<p>home works!</p>
+<mat-card>
+  <b>Project Details</b>
+  <span>
+    <table>
+    <tr>
+      <td>Organization</td>
+      <td>Category</td>
+      <td>Activity</td>
+      <td>Title</td>
+      <td>Min Age</td>
+      <td>Max Age</td>
+      <td>Description</td>
+    </tr>
+    <tr *ngFor="let details of projectFormData.projectDetails">
+      <td>{{details.organization}}</td>
+      <td>{{details.category}}</td>
+      <td>{{details.activity}}</td>
+      <td>{{details.title}}</td>
+      <td>{{details.minAge}}</td>
+      <td>{{details.maxAge}}</td>
+      <td>{{details.description}}</td>
+    </tr>
+  </table>
+  </span>
+</mat-card>
+
+<mat-card>
+  <b>Project Gallery</b>
+  <span>
+    <table>
+    <thead>
+      <th>Project Name</th>
+      <th>Images</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gallery of projectFormData.projectGallery">
+        <td> {{gallery.projectName}} </td>
+        <td>
+          <img *ngFor="let img of gallery.projectImages" [src]="apiUrl + img"  style="width: 10%;height: auto;">
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </span>
+</mat-card>
+
+<mat-card>
+  <b>Project Costs</b>
+<span>
+  <table>
+   <thead>
+      <th>Project Name</th>
+      <th>Duration</th>
+      <th>Costs</th>
+    </thead>
+    <tbody *ngFor="let projCosts of projectFormData.projectCosts; let i = index">
+      <tr *ngFor="let option of projCosts.projectCostsOptions; let j = index">
+        <td>
+          <span *ngIf="j === 0">
+            {{projCosts.projectName}}
+          </span>
+        </td>
+        <td>
+          {{option.duration}}
+        </td>
+        <td>
+          {{option.costs}}
+        </td>
+      </tr>
+    </tbody>
+</table>
+</span>
+</mat-card>
+
