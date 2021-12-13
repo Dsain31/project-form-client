@@ -1,9 +1,15 @@
 <mat-card>
   <form [formGroup]="projectForm">
 
-    <mat-stepper linear #stepper>
+    <mat-stepper #stepper>
       <mat-step [stepControl]="projectDetails" formGroupName="projectDetails" label="Project Details">
         <app-project-details [projectForm]="projectForm"></app-project-details>
+      </mat-step>
+       <mat-step [stepControl]="projectGallery" formGroupName="projectGallery" label="Project Gallery">
+        <app-project-gallery [projectForm]="projectForm"></app-project-gallery>
+      </mat-step>
+       <mat-step [stepControl]="projectCosts" formGroupName="projectCosts" label="Project Gallery">
+        <app-project-costs [projectForm]="projectForm"></app-project-costs>
       </mat-step>
       
     </mat-stepper>

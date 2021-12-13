@@ -1,0 +1,29 @@
+<form [formGroup]="projectForm">
+  <h2><b>Project Details</b></h2>
+  <p style="margin-bottom: 0;">Project Name</p>
+ <mat-form-field appearance="outline" class="mat-field-project-costs" formGroupName="projectCosts">
+    <input matInput formControlName="projectName" placeholder="Project Name">
+  </mat-form-field>
+  <div formGroupName="projectCosts">
+    <div formArrayName="projectCostsOptions">
+      <div *ngFor="let option of projectCostsOptionsArray.controls; let i  = index" [formGroupName]="i">
+        <mat-form-field appearance="outline" >
+          <mat-label>Project Duration</mat-label>
+          <input matInput formControlName="duration" placeholder="Project Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" >
+          <mat-label>Project Costs</mat-label>
+          <input matInput formControlName="costs" placeholder="Project Name">
+        </mat-form-field>
+        <button *ngIf="i > 0" mat-raised-button color="warn" (click)="removeOptions(i)">Delete</button>
+      </div>
+        <button style="width: 100%;" mat-raised-button color="warn" (click)="addMoreOption()">Add Row</button>
+    </div>
+  </div>
+</form>
+   <div style="margin-top:5px">
+     <button mat-raised-button color='warn' 
+     matStepperPrevious >Back</button>
+    <button style="float: right;" mat-raised-button color='warn' 
+     matStepperNext (click)="onFinish()">Finish</button>
+  </div>

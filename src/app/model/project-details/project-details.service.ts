@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { CommonService } from 'src/app/global/common/common.service';
 import { AjaxResponse } from 'src/app/interface/ajax.response';
+import { DeleteImage, ImageUpload } from 'src/app/interface/image.upload';
 import { Activity, Category, Organization } from 'src/app/interface/project-details';
 import { environment } from 'src/environments/environment';
 
@@ -27,4 +28,6 @@ export class ProjectDetailsService {
     return this.http.get<AjaxResponse<Activity[]>>(this.apiUrl + '/activity_list?categoryId=' + categoryId)
       .pipe((catchError(this.commonService.handleError)));
   }
+
+
 }

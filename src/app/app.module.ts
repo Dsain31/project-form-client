@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './global/material/material.module';
 import { HeaderComponent } from './view-model/header/header.component';
-
 @NgModule({
   declarations: [
     AppComponent,

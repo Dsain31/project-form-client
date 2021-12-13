@@ -1,0 +1,30 @@
+
+<form [formGroup]="projectForm">
+  <h2><b>Project Details</b></h2>
+    <p style="margin-bottom: 0;">Project Name</p>
+ <mat-form-field appearance="outline" formGroupName="projectGallery">
+    <input matInput formControlName="projectName" placeholder="Project Name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" formGroupName="projectGallery">
+    <input matInput hidden>
+    <input type="file" 
+     formArrayName="projectImages"
+     multiple accept="image/*"
+     (change)="onImageChange($event)">
+  </mat-form-field>
+  <button mat-raised-button
+   color="warn" (click)="uploadImages()">Upload</button>
+   <mat-grid-list cols='4' rowHeight="100px">
+     <mat-grid-tile *ngFor="let image of projectImagesArray.controls; let i = index">
+       <mat-icon class="cancel-upload" (click)="deleteImage(image.value, i)" >cancel</mat-icon>
+       <img [src]="apiUrl + image.value" alt="" style="width: 100%; max-width: auto;" >
+     </mat-grid-tile>
+   </mat-grid-list>
+   <div>
+     <button mat-raised-button color='warn' 
+     matStepperPrevious >Back</button>
+    <button style="float: right;" mat-raised-button color='warn' 
+     matStepperNext (click)="onSubmit()">Next</button>
+  </div>
+</form>

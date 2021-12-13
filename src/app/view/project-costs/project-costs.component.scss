@@ -1,0 +1,15 @@
+.mat-field-project-costs{
+  width: 100%;
+}
+
+mat-form-field {
+  padding: 5px;
+  width: 40vw;
+}
+
+@media only screen and (max-width: 550px) {
+  mat-form-field {
+  width: 100%;
+}
+
+}
