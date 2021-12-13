@@ -19,6 +19,19 @@ on Home page all saved data will be show according to the steps.
 
 ## Requirements
        `At least node version 12.20` for angular 13
+       
+## screenshots
+### homepage
+![](https://github.com/Dsain31/project-form-client/blob/main/src/assets/image4.png?raw=true)
+
+### Step 1 Project Details
+![](https://github.com/Dsain31/project-form-client/blob/main/src/assets/image1.png?raw=true)
+
+### Step 2 Project Gallery
+![](https://github.com/Dsain31/project-form-client/blob/main/src/assets/image2.png?raw=true)
+
+### step 3 Project Costs
+![](https://github.com/Dsain31/project-form-client/blob/main/src/assets/image3.png?raw=true)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
